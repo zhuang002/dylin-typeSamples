@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -14,8 +15,51 @@ public class Main {
 		//arraySample();
 		//stringSample();
 		//forExample();
-		ifExample();
+		//ifExample();
+		arrayListExample();
+		//whileLoopSample();
 		
+	}
+
+	private static void whileLoopSample() {
+		// TODO Auto-generated method stub
+		
+		int sum=0;
+		int i=1;
+		String s=sc.nextLine();
+		while (!s.equals("quit")) { //当 i<=100 时，执行循环代码
+			System.out.println(s+">");
+			s=sc.nextLine();
+		}
+		System.out.println(sum);
+	}
+
+	private static void arrayListExample() {
+		// TODO Auto-generated method stub
+		ArrayList<Integer> list=new ArrayList<>();
+		System.out.println("Current list size is "+list.size());
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		
+		
+		
+		System.out.println("Now list size is "+list.size());
+		for (int i=0;i<list.size();i++) {
+			System.out.print(list.get(i)+" ");
+		}
+		System.out.println();
+		
+		System.out.println(list.contains(2));
+		
+		list.remove(1);
+		System.out.println("list size after remove is "+list.size());
+		for (int i=0;i<list.size();i++) {
+			System.out.print(list.get(i)+" ");
+		}
+		System.out.println();
+		
+		System.out.println(list.contains(2));
 	}
 
 	private static void ifExample() {
@@ -77,7 +121,7 @@ public class Main {
 
 	private static void stringSample() {
 		// TODO Auto-generated method stub
-		System.out.println("Please input s1 and s2:");
+		/*System.out.println("Please input s1 and s2:");
 		String s1 = sc.next();
 		String s2 = sc.next();
 		
@@ -97,7 +141,42 @@ public class Main {
 		for (int i=0;i<s1.length();i++) {
 			System.out.print(s1.charAt(i)+",");
 		}
-		System.out.println();
+		System.out.println();*/
+		
+		
+		/*String s = "abc def ghi 123 456";
+		String[] splited = s.split(" "); // splited = {"abc", "def","ghi", "123", "456"}
+		
+		s = "abc&#def&#ghi&#123&#456";
+		splited = s.split("&#");
+		
+		s="123";
+		int i = Integer.parseInt(s);
+		
+		s="1234141122143124312";
+		long l = Long.parseLong(s);
+		
+		s = "123.333";
+		double d = Double.parseDouble(s);
+		
+		s="true";
+		boolean b = Boolean.parseBoolean(s);*/
+		
+		String s = "afdaslfja;lkfhsgasgja;sgjafjag;khjasdg;kjlkdsa;ljhgajlkfha;";
+		int idx = s.indexOf("as");
+		while (idx>=0) {
+			System.out.println(idx);
+			idx = s.indexOf("as", idx+2);
+		}
+		
+		idx = s.lastIndexOf("ja");
+		System.out.println(idx);
+		
+		String substr = s.substring(5, 11);
+		System.out.println(substr);
+		
+		
+		
 		
 	}
 
@@ -122,6 +201,7 @@ public class Main {
 	private static void arraySample() {
 		// Java is a "strong typed" language
 		int[] ia = {2,3,(int)4.4,5}; //python [2,3,4,5]
+
 		for (int i=0;i<ia.length;i++) {
 			System.out.print(ia[i]+",");
 		}
